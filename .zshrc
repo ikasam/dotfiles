@@ -94,5 +94,7 @@ if [ -z $TMUX ]; then
   fi
 fi
 
+# mosh
+compdef mosh=ssh
 
 
