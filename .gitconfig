@@ -3,3 +3,5 @@
 	email = ikasam.k503@gmail.com
 [color]
 	ui = auto
+[core]
+	excludesfile = ~/.gitignore
