@@ -98,3 +98,5 @@ fi
 compdef mosh=ssh
 
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
