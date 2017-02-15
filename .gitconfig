@@ -5,7 +5,10 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
-[url "https://"]
-	insteadOf = git://
+[url "git@github.com:"]
+    pushInsteadOf = git://github.com/
+    pushInsteadOf = https://github.com/
+[url "git://"]
+	insteadOf = https://
 [http]
 	postBuffer = 524288000
