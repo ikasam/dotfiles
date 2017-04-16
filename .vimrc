@@ -38,25 +38,33 @@ endif
 " Color
 syntax on
 colorscheme twilight
-hi CursorLine term=none cterm=none ctermbg=242 guibg=#262626
+"hi CursorLine term=none cterm=none ctermbg=242 guibg=#262626
 hi LineNr ctermfg=242 guifg=#a09998
+
+" vim-indent-guide
+" hi IndentGuidesOdd  ctermbg=black
+" hi IndentGuidesEven ctermbg=darkgrey
 
 " My settings
 set autoindent
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smartindent
 set smarttab
 set number
 set title
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 set laststatus=2
 set showmatch
 set helpheight=999
 set clipboard=unnamed
 
+" Switch command mode key
+noremap ; :
+
+" Window & Tab
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -82,4 +90,9 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sq! :<C-u>q!<CR>
 nnoremap sQ :<C-u>bd<CR>
 
- 
+" Enable CursorLine when hold hands for seconds.
+" augroup vimrc-auto-cursorline
+"   autocmd!
+"   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
+"   autocmd CursorHold,CursorHoldI * setlocal cursorline
+" augroup END 
