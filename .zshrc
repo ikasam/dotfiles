@@ -79,13 +79,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# my settings
+# lang and alias
 export LANG=en_US.UTF-8
 alias v=vim
 alias g=git
 alias pl=perl
+alias be='bundle exec'
+alias ls='ls --group-directories-first --color'
 
-# TMUX Settings
+# Attach the last tmux session,
+# or craete new session unless there is no last session.
 if [ -z $TMUX ]; then
   if $(tmux has-session); then
     tmux attach
@@ -94,9 +97,9 @@ if [ -z $TMUX ]; then
   fi
 fi
 
-# mosh
+# mosh complete
 compdef mosh=ssh
 
-
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
