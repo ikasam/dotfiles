@@ -3,7 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/ikasamak/.zshrc'
@@ -21,22 +21,27 @@ alias pl=perl
 alias be='bundle exec'
 alias ls='ls --group-directories-first --color'
 
-# Attach the last tmux session,
-# or craete new session unless there is no last session.
-# if [ -z $TMUX ]; then
-#   if $(tmux has-session); then
-#     tmux attach
-#   else
-#     tmux
-#   fi
-# fi
+# disable stop tty key-bind
+stty stop undef
 
 # mosh complete
 compdef mosh=ssh
 
+# Attach the last tmux session,
+# or craete new session unless there is no last session.
+if [ -z $TMUX ]; then
+  if $(tmux has-session); then
+    tmux attach
+  else
+    tmux
+  fi
+fi
+
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d ~/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 #### user setting end ####
 
 #### zplug setting start ####
@@ -54,8 +59,13 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # ローカルプラグインも読み込める
 zplug "~/.zsh", from:local
 
+# https://github.com/mafredri/zsh-async
+zplug "mafredri/zsh-async"
+
 # テーマファイルを読み込む
-zplug 'dracula/zsh', as:theme
+zplug "yous/lime"
+# zplug "sindresorhus/pure"
+# zplug "denysdovhan/spaceship-zsh-theme"
 
 # 未インストール項目をインストールする
 if ! zplug check --verbose; then
@@ -66,5 +76,5 @@ if ! zplug check --verbose; then
 fi
 
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load --verbose
+zplug load
 #### zplug setting end ####
