@@ -100,6 +100,9 @@ nnoremap sQ :<C-u>bd<CR>
 "   autocmd CursorHold,CursorHoldI * setlocal cursorline
 " augroup END 
 
+""" NERDTree
+nnoremap <silent> <C-n> :<C-u>NERDTree<CR>
+
 """ unite.vim
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
