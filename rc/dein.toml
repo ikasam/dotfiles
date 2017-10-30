@@ -22,3 +22,6 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+[[plugins]]
+repo = 'vim-scripts/AnsiEsc.vim'
+
