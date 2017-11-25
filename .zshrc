@@ -43,6 +43,11 @@ if [ -d ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # zvm
 [[ -s "/home/ikasamak/.gvm/scripts/gvm" ]] && source "/home/ikasamak/.gvm/scripts/gvm"
 
