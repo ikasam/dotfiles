@@ -27,6 +27,9 @@ stty stop undef
 # mosh completion
 compdef mosh=ssh
 
+# Third party completion
+fpath=(~/.zsh/completion $fpath)
+
 # Attach the last tmux session,
 # or craete new session unless there is no last session.
 if [ -z $TMUX ]; then
