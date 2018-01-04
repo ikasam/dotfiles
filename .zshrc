@@ -24,7 +24,7 @@ alias ls='ls --group-directories-first --color'
 # disable stop tty key-bind
 stty stop undef
 
-# mosh complete
+# mosh completion
 compdef mosh=ssh
 
 # Attach the last tmux session,
