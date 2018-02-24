@@ -51,8 +51,11 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# zvm
+# gvm
 [[ -s "/home/ikasamak/.gvm/scripts/gvm" ]] && source "/home/ikasamak/.gvm/scripts/gvm"
+
+# awscli
+export PATH=~/.local/bin:$PATH
 
 #### user setting end ####
 
