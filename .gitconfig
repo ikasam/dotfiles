@@ -11,7 +11,7 @@
   pushInsteadOf = https://github.com
 [url "https://github.com"]
 	insteadOf = git://github.com
-	insteadOf = git@github.com
+	#insteadOf = git@github.com
 [http]
 	postBuffer = 524288000
 [push]
