@@ -22,3 +22,9 @@
 	postBuffer = 524288000
 [push]
 	default = simple
+
+[alias]
+    get = !ghq get -p
+    cd = "!ghq look `ghq list | fzy $(echo $1 | awk '{if($1!=\"\") print \"-q\" $1}')` ; :"
+    list = !ghq list
+    root = "!exec $SHELL ; :"
