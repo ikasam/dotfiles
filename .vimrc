@@ -53,6 +53,8 @@ if dein#check_install()
   call dein#install()
 endif
 
+set helplang=ja
+
 " Color
 syntax on
 colorscheme twilight

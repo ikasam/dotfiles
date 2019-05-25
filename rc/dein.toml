@@ -25,3 +25,6 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'vim-scripts/AnsiEsc.vim'
 
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
