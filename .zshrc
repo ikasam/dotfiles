@@ -27,6 +27,9 @@ stty stop undef
 # mosh completion
 compdef mosh=ssh
 
+# mosh exit command
+alias mxit='pkill -SIGUSR1 mosh-server'
+
 # Third party completion
 fpath=(~/.zsh/completion $fpath)
 
@@ -57,6 +60,9 @@ eval "$(pyenv virtualenv-init -)"
 # awscli
 export PATH=~/.local/bin:$PATH
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #### user setting end ####
 
 #### zplug setting start ####
@@ -82,6 +88,14 @@ zplug "yous/lime"
 # zplug "sindresorhus/pure"
 # zplug "denysdovhan/spaceship-zsh-theme"
 
+export ENHANCD_FILTER=fzy:fzf:peco
+zplug "b4b4r07/enhancd", use:init.sh
+
+zplug "direnv/direnv", \
+    as:command, \
+    rename-to:direnv, \
+    hook-build:"make"
+
 # 未インストール項目をインストールする
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -93,3 +107,6 @@ fi
 # コマンドをリンクして、PATH に追加し、プラグインは読み込む
 zplug load
 #### zplug setting end ####
+
+export EDITOR=vim
+eval "$(direnv hook zsh)"
