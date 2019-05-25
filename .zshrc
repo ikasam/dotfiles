@@ -20,6 +20,7 @@ alias g=git
 alias pl=perl
 alias be='bundle exec'
 alias ls='ls --group-directories-first --color'
+alias reload='rm ~/.zcompdump && exec zsh -l'
 
 # disable stop tty key-bind
 stty stop undef
@@ -56,6 +57,9 @@ eval "$(pyenv virtualenv-init -)"
 
 # gvm
 [[ -s "/home/ikasamak/.gvm/scripts/gvm" ]] && source "/home/ikasamak/.gvm/scripts/gvm"
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # awscli
 export PATH=~/.local/bin:$PATH
