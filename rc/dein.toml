@@ -28,3 +28,10 @@ repo = 'vim-scripts/AnsiEsc.vim'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
