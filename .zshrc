@@ -17,7 +17,7 @@ compinit
 export LANG=en_US.UTF-8
 
 if [ $(command -v gls) ]; then
-  alias ls='gls --group-directories-first --color'
+  alias ls='gls --group-directories-first --color=auto'
 fi
 alias ll='ls -l'
 alias lla='ls -la'
