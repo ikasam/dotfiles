@@ -70,6 +70,10 @@ fi
 
 if [ -d $ZPLUG_HOME ]; then
   source $ZPLUG_HOME/init.zsh
+
+  if [ $(command -v fd) ]; then
+    export FZF_DEFAULT_COMMAND='fd --type file --follow'
+  fi
   
   # コマンドも管理する
   # グロブを受け付ける（ブレースやワイルドカードなど）
