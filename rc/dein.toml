@@ -8,6 +8,9 @@ repo = 'Shougo/unite.vim'
 repo = 'vim-scripts/twilight'
 
 [[plugins]]
+repo = 'skanehira/vsession'
+
+[[plugins]]
 repo = 'Townk/vim-autoclose'
 
 [[plugins]]
