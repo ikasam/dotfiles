@@ -15,6 +15,12 @@ compinit
 #### user setting start ####
 # lang and alias
 export LANG=en_US.UTF-8
+export EDITOR=vim
+
+disable r
+alias zrc="$EDITOR ~/.zshrc"
+alias reload='rm ~/.zcompdump && exec zsh -l'
+alias r='reload'
 
 if [ $(command -v gls) ]; then
   alias ls='gls --group-directories-first --color=auto'
@@ -116,7 +122,6 @@ if [ -d $ZPLUG_HOME ]; then
 fi
 #### zplug setting end ####
 
-export EDITOR=vim
 if [ $(command -v direnv) ]; then
   eval "$(direnv hook zsh)"
 fi
