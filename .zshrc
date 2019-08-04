@@ -27,12 +27,21 @@ if [ $(command -v gls) ]; then
 fi
 alias ll='ls -l'
 alias lla='ls -la'
+alias l='ls -la'
 
+if [ $(command -v brew) ]; then
+  alias vim=$(brew list vim | grep 'bin/vim$')
+fi
 alias v=vim
 alias g=git
 alias pl=perl
+alias lzd=lazydocker
 alias be='bundle exec'
-alias reload='rm ~/.zcompdump && exec zsh -l'
+alias dc='docker-compose'
+
+alias par='dc exec app php artisan'
+alias part='par tinker'
+alias partt='dc exec app sh -c "while true; do php artisan tinker; done"'
 
 # disable stop tty key-bind
 stty stop undef
