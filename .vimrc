@@ -79,7 +79,7 @@ set title
 set laststatus=2
 set showmatch
 set helpheight=999
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " Switch command mode key
 noremap ; :
@@ -148,9 +148,6 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 set showtabline=2
 set noshowmode
+
